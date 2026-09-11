@@ -31,6 +31,23 @@ public class LinkedList {
         currentNode.next = newNode;
     }
 
+    public void removeFirst() {
+        if (head != null) {
+            head.next = null;
+        }
+    }
+
+    public void removeEnd() {
+        if (head == null) return;
+        var temp = head;
+        var currentNode = temp.next;
+        while (currentNode != null && currentNode.next != null) {
+            temp = currentNode;
+            currentNode = temp.next;
+        }
+        temp.next = null;
+    }
+
     public void print() {
         var currentNode = head;
         while (currentNode != null) {
