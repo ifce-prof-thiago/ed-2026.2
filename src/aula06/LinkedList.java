@@ -6,6 +6,7 @@ public class LinkedList {
     private static class Node {
         String data;
         Node next;
+
         public Node(String data) {
             this.data = data;
         }
@@ -51,18 +52,36 @@ public class LinkedList {
     }
 
     public Node get(String data) {
-        // TODO
+        if (head == null) {
+            return null;
+        }
+        var temp = head;
+        while (temp != null) {
+            if (temp.data.equals(data)) {
+                return temp;
+            }
+            temp = temp.next;
+        }
+        return null;
     }
 
     public void removeEnd() {
         if (head == null) return;
-        var temp = head;
-        var currentNode = temp.next;
-        while (currentNode != null && currentNode.next != null) {
-            temp = currentNode;
-            currentNode = temp.next;
+
+        if (head.next == null) {
+            head = null;
+            return;
         }
-        temp.next = null;
+
+        var previous = head;
+        var currentNode = head.next;
+
+        while (currentNode.next != null) {
+            previous = currentNode;
+            currentNode = currentNode.next;
+        }
+
+        previous.next = null;
     }
 
     public void print() {

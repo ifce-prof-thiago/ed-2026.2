@@ -5,10 +5,5 @@ void main() {
     list.insertFirst("a");
     list.insertEnd("b");
     list.insertFirst("c");
-    boolean contains = list.contains("c");
-    list.removeFirst();
-    var node = list.get("a");
-
-    list.print();
-
+    var node = list.get("d");
 }
