@@ -1,23 +1,22 @@
-package aula06;
+package aula07;
 
-public class LinkedList {
+public class LinkedList<T> {
     Node head;
-
-    private static class Node {
-        String data;
+    private class Node {
+        T data;
         Node next;
-        public Node(String data) {
+        public Node(T data) {
             this.data = data;
         }
     }
 
-    public void insertFirst(String data) {
+    public void insertFirst(T data) {
         var newNode = new Node(data);
         newNode.next = this.head;
         this.head = newNode;
     }
 
-    public void insertEnd(String data) {
+    public void insertEnd(T data) {
         var newNode = new Node(data);
         if (head == null) {
             head = newNode;
@@ -36,7 +35,7 @@ public class LinkedList {
         }
     }
 
-    public boolean contains(String data) {
+    public boolean contains(T data) {
         if (head == null) {
             return false;
         }
@@ -50,14 +49,14 @@ public class LinkedList {
         return false;
     }
 
-    public Node get(String data) {
+    public T get(T data) {
         if (head == null) {
             return null;
         }
         var temp = head;
         while (temp != null) {
             if (temp.data.equals(data)) {
-                return temp;
+                return temp.data;
             }
             temp = temp.next;
         }
