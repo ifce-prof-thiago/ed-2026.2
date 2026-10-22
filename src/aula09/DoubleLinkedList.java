@@ -49,8 +49,34 @@ public class DoubleLinkedList<T> {
         size++;
     }
 
-    // 1. precorrer todos os elementos do início até o final, imprimindo os dados
+    public void print() {
+        if (size == 0) {
+            System.out.println("Lista Vazia");
+            return;
+        }
+        var current = first;
+        while (current != null) {
+            System.out.println(current.data);
+            current = current.next;
+        }
+    }
 
-    // 2. precorrer a lista de forma inversa, imprimindo todos os dados
+    public void printReverse() {
+        if (size == 0) {
+            System.out.println("Lista Vazia");
+            return;
+        }
+        var current = last;
+        while (current != null) {
+            System.out.println(current.data);
+            current = current.prev;
+        }
+    }
+
+    // remover um elemento do início
+    // remover um elemento do final
+    // retornar o dado do primeiro elemento
+    // retornar o dado do último elemento
+    // retornar o tamanho da lista
 
 }

@@ -5,4 +5,6 @@ void main() {
     list.insertFirst(10);
     list.insertFirst(20);
     list.insertLast(1988);
+
+    list.printReverse();
 }
