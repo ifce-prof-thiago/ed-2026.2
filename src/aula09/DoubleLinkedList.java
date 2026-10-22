@@ -74,9 +74,29 @@ public class DoubleLinkedList<T> {
     }
 
     // remover um elemento do início
+    public void removeFirst() {
+    }
+
     // remover um elemento do final
-    // retornar o dado do primeiro elemento
-    // retornar o dado do último elemento
-    // retornar o tamanho da lista
+    public void removeLast() {
+    }
+
+    public T getFirst() {
+        if (size == 0) {
+            return null;
+        }
+        return first.data;
+    }
+
+    public T getLast() {
+        if (size == 0) {
+            return null;
+        }
+        return last.data;
+    }
+
+    public int size() {
+        return size;
+    }
 
 }
