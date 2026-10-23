@@ -73,12 +73,30 @@ public class DoubleLinkedList<T> {
         }
     }
 
-    // remover um elemento do início
     public void removeFirst() {
+        if (size == 0) {
+            return;
+        }
+        first = first.next;
+        if (size == 1) {
+            last = null;
+        } else {
+            first.prev = null;
+        }
+        size--;
     }
 
-    // remover um elemento do final
     public void removeLast() {
+        if (size == 0) {
+            return;
+        }
+        last = last.prev;
+        if (size == 1) {
+            first = null;
+        } else {
+            last.next = null;
+        }
+        size--;
     }
 
     public T getFirst() {

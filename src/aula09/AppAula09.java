@@ -6,5 +6,8 @@ void main() {
     list.insertFirst(20);
     list.insertLast(1988);
 
-    list.printReverse();
+    list.removeFirst();
+    list.print();
+    list.removeLast();
+    list.print();
 }
